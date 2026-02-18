@@ -20,7 +20,8 @@ def is_vpn_connected():
         return False
 
 def main():
-    if is_vpn_connected():
+    if is_vpn_connected():  # Commented - also works from office network
+    # if True:  # Allow execution from VPN or office network
         print("VPN is connected.")
         try:
             # Execute your main script
@@ -46,6 +47,12 @@ def main():
             print("********************************* Script send_files_year_bk executed successfully. *********************************")
         except subprocess.CalledProcessError as e:
             print(f"Error executing the script send_files_year_bk: {e}", file=sys.stderr)
+        try:
+            # Execute your main script
+            subprocess.run(['python', 'send_files_year_bk_items.py'], check=True)
+            print("********************************* Script send_files_year_bk_items executed successfully. *********************************")
+        except subprocess.CalledProcessError as e:
+            print(f"Error executing the script send_files_year_bk_items: {e}", file=sys.stderr)
         try:
             # Execute your main script
             subprocess.run(['python', 'send_files_exportacao_bck.py'], check=True)

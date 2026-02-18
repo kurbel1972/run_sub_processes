@@ -11,8 +11,8 @@ logging.basicConfig(
 )
 
 # Source and destination directories
-source = r'H:\Backup'
-destination = r'H:\Backup\2025'
+source = r'J:\Backup'
+destination = r'J:\Backup\2026'
 counter_files = 0
 
 # List all files in the source directory
@@ -22,9 +22,9 @@ except FileNotFoundError as e:
     logging.error(f"Error listing files in the source directory: {e}")
     raise SystemExit(f"Failed to list files in the source directory. Please check the path and permissions.")
 
-# Iterate through all files and move those starting with 'IPS2024'
+# Iterate through all files and move those starting with 'IPS2026'
 for file in files:
-    if file.startswith('IPS2025'):
+    if file.startswith('IPS2026'):
         counter_files += 1
         source_file = os.path.join(source, file)
         destination_file = os.path.join(destination, file)

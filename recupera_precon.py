@@ -2,8 +2,8 @@ import shutil
 import os
 
 # Directories
-input_directory = r"\\gov004\IPS-EDI\Input\Error\precon"
-output_directory = r"\\gov004\IPS-EDI\Input"
+input_directory = r"\\APPIPSP01\IPS-EDI\Input\Error\precon"
+output_directory = r"\\APPIPSP01\IPS-EDI\Input"
 
 def process_file(input_file_path, output_file_path):
     try:
