@@ -65,6 +65,24 @@ def main():
             print("********************************* Script send_edi_email_messages_new executed successfully. *********************************")
         except subprocess.CalledProcessError as e:
             print(f"Error executing the script send_edi_email_messages_new: {e}", file=sys.stderr)
+        try:
+            # Execute your main script
+            subprocess.run(['python', 'send_files_cs_to_bk.py'], check=True)
+            print("********************************* Script send_files_cs_to_bk executed successfully. *********************************")
+        except subprocess.CalledProcessError as e:
+            print(f"Error executing the script send_files_cs_to_bk: {e}", file=sys.stderr)
+        try:
+            # Execute your main script
+            subprocess.run(['python', 'send_files_sgee_to_bk.py'], check=True)
+            print("********************************* Script send_files_sgee_to_bk executed successfully. *********************************")
+        except subprocess.CalledProcessError as e:
+            print(f"Error executing the script send_files_sgee_to_bk: {e}", file=sys.stderr)
+        try:
+            # Execute your main script
+            subprocess.run(['python', 'send_files_sgee_items_to_bk.py'], check=True)
+            print("********************************* Script send_files_sgee_items_to_bk executed successfully. *********************************")
+        except subprocess.CalledProcessError as e:
+            print(f"Error executing the script send_files_sgee_items_to_bk: {e}", file=sys.stderr)
     else:
         print("VPN is not connected.")
 
